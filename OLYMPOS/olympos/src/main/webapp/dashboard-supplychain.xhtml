@@ -1,0 +1,543 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+        <h:outputScript name="js/maps.js" library="olympos-layout" /> 
+    </ui:define>
+
+    <ui:define name="content">
+
+
+        <!-- top buttons-->
+        <div class="Container100">
+            <div class="Card">
+                <div class="Container80 Responsive100 NoIndent ui-fluid">
+                    <div class="Container20 Responsive50 "><p:button value="Supplier" styleClass="AquaButton"/></div>
+                    <div class="Container20 Responsive50 "><p:button value="Employee" styleClass="AquaButton"/></div>
+                    <div class="Container20 Responsive50 "><p:button value="Account" styleClass="AquaButton"/></div>
+                    <div class="Container20 Responsive50 "><p:button value="PhoneBook" styleClass="AquaButton"/></div>
+                    <div class="Container20 Responsive50 "><p:button value="Inventory" styleClass="AquaButton"/></div>
+                </div>
+
+                <div class="Container20 Responsive100 TexAlRight">
+                    <p:button icon="fa fa-plus" styleClass="Fs14 White GreenButton"/>
+                    <p:button icon="fa fa-folder-open" styleClass="Fs14 White PurpleButton"/>
+                    <p:button icon="fa fa-calculator" styleClass="Fs14 White OrangeButton"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- top boxes-->
+        <div class="Container100 NoIndent Flex FlexWrap">
+            <div class="Container25 Responsive50 Flex">
+                <div class="Card">
+                    <div class="EmptyBox10"></div>
+                    <div class="Container60 NoIndent Responsive100">
+                        <i class="icon-mind Green Fs60 Fleft MarRight10"></i>
+                        <span class="FontLatoBlack Black Opac80 Fleft Fs13 DispBlock">PLANNED ACTIONS</span><br/>
+                        <span class="FontLatoRegular Green Fleft Fs40 DispBlock">24.667</span>
+                    </div>
+                    <div class="Container40 NoIndent ui-fluid Responsive100">
+                        <div class="EmptyBox10"></div>
+                        <p:button value="Get All Actions" styleClass="GreenButton"/>
+                    </div>
+                    <div class="EmptyBox10"></div>
+                </div>
+            </div>
+            <div class="Container25 Responsive50 Flex">
+                <div class="Card">
+                    <div class="EmptyBox10"></div>
+                    <div class="Container60 NoIndent Responsive100">
+                        <i class="icon-document187 Blue Fs60 Fleft MarRight10"></i>
+                        <span class="FontLatoBlack Black Opac80 Fleft Fs13 DispBlock">REPORTED ACTIONS</span><br/>
+                        <span class="FontLatoRegular Blue Fleft Fs40 DispBlock">19.332</span>
+                    </div>
+                    <div class="Container40 NoIndent ui-fluid Responsive100">
+                        <div class="EmptyBox10"></div>
+                        <p:button value="Get All Actions" styleClass="BlueButton"/>
+                    </div>
+                    <div class="EmptyBox10"></div>
+                </div>
+            </div>
+            <div class="Container25 Responsive50 Flex">
+                <div class="Card">
+                    <div class="EmptyBox10"></div>
+                    <div class="Container60 NoIndent Responsive100">
+                        <i class="icon-hosting Navy Fs60 Fleft MarRight10"></i>
+                        <span class="FontLatoBlack Black Opac80 Fleft Fs13 DispBlock">MAINTENANCE</span><br/>
+                        <span class="FontLatoRegular Navy Fleft Fs40 DispBlock">2.879</span>
+                    </div>
+                    <div class="Container40 NoIndent ui-fluid Responsive100">
+                        <div class="EmptyBox10"></div>
+                        <p:button value="Get All Actions" styleClass="NavyButton"/>
+                    </div>
+                    <div class="EmptyBox10"></div>
+                </div>
+            </div>
+            <div class="Container25 Responsive50 Flex">
+                <div class="Card">
+                    <div class="EmptyBox10"></div>
+                    <div class="Container60 NoIndent Responsive100">
+                        <i class="icon-eye12 Yellow Fs60 Fleft MarRight10"></i>
+                        <span class="FontLatoBlack Black Opac80 Fleft Fs13 DispBlock">DATA MAPPING</span><br/>
+                        <span class="FontLatoRegular Yellow Fleft Fs40 DispBlock">41.992</span>
+                    </div>
+                    <div class="Container40 NoIndent ui-fluid Responsive100">
+                        <div class="EmptyBox10"></div>
+                        <p:button value="Get All Actions" styleClass="YellowButton"/>
+                    </div>
+                    <div class="EmptyBox10"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- center boxes -->
+        <div class="Container100 NoIndent Flex FlexWrap">
+            <div class="Container50 Responsive100 Flex">
+                <div class="Card">
+                    <div class="CardBigTopic">SUPPLY CHAIN VEHICLES TRACKING MAP</div>
+                    <div class="SeparatorFull"></div>
+                    <div class="CardSmallTopic">TRACKING FORM</div>
+                    <div class="EmptyBox5"></div>
+                    <div class="Container100 ui-fluid">
+                        <p:selectOneMenu id="company" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Select Company" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="Container33 Responsive50 ui-fluid">
+                        <p:selectOneMenu id="country" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Select Country" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="Container33 Responsive50 ui-fluid">
+                        <p:selectOneMenu id="city" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Select City" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="Container33 Responsive50 ui-fluid">
+                        <p:selectOneMenu id="vehicle" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Select Vehicle Type" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="EmptyBox5"></div>
+                    <div class="Separator"></div>
+
+                    <div class="CardSmallTopic">SELECT VEHICLE CRITERIAS</div>
+                    <div class="EmptyBox5"></div>
+                    <div class="Container100">
+                        <p:selectManyCheckbox layout="responsive" columns="4">
+                            <f:selectItem itemLabel="Trucks" itemValue="0" />
+                            <f:selectItem itemLabel="Service Cars" itemValue="1" />
+                            <f:selectItem itemLabel="Panelvans" itemValue="2" />
+                            <f:selectItem itemLabel="Cars" itemValue="3" />
+                            <f:selectItem itemLabel="Buses" itemValue="4" />
+                            <f:selectItem itemLabel="Rental Cars" itemValue="5" />
+                            <f:selectItem itemLabel="Minibuses" itemValue="6" />
+                            <f:selectItem itemLabel="Luxuries" itemValue="7" />
+                        </p:selectManyCheckbox>
+                    </div>
+                    <div class="EmptyBox5"></div>
+                    <div class="Separator"></div>
+
+                    <div class="Container30 Responsive50 ui-fluid"><p:button value="Update Map" styleClass="BlueButton"/></div>
+                    <div class="Container30 Responsive50 ui-fluid"><p:button value="Clear Form" styleClass="RedButton"/></div>
+
+                    <div class="EmptyBox5"></div>
+                    <div class="Separator"></div>
+
+                    <p:gmap center="40.7117299, -74.0097789" zoom="14" type="ROADMAP" model="#{markersView.simpleModel1}" style="height:600px; border:solid 1px #ccc;" styleClass="Wid100 DispBlock OvHidden BordRad3" />
+                </div>
+            </div>
+
+            <div class="Container50 NoIndent Responsive100 Flex FlexWrap">
+                <div class="Container100 Flex">
+                    <div class="Card">
+                        <div class="CardBigTopic">WEEKLY PLANNING OF VEHICLES</div>
+                        <div class="SeparatorFull"></div>
+                        <div class="CardSmallTopic">ADD &amp; REMOVE PATH TO VEHICLES</div>
+                        <div class="EmptyBox5"></div>
+
+                        <div class="Container60 NoIndent Responsive100">
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="plate" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Vehicle Plate" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="type" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Vehicle Type" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="routeid" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Route ID" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="totalcost" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Total Cost" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="ltl" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="LTL Cost" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="stops" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Total Stops" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="distance" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Total Distance" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="weight" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Total Weight" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="start" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Start Date Time" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="end" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="End Date Time" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="break" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Break Time" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="duty" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Duty Time" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="driver" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Driver Name" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid">
+                                <p:selectOneMenu id="wait" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="Wait Time" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+
+                            <div class="EmptyBox5"></div>
+                            <div class="Separator"></div>
+
+                            <div class="CardSmallTopic">SELECT PATH FROM LIST FOR REMOVE OR EDIT</div>
+                            <div class="EmptyBox5"></div>
+
+                            <div class="Container100 ui-fluid">
+                                <p:selectOneMenu id="pathselect" style="" appendTo="@this">
+                                    <f:selectItem itemLabel="FRESH FOOD TRUCK - NYC 34566 (Manhattan)" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="Container50 Responsive50 ui-fluid"><p:button value="Edit Path" styleClass="YellowButton"/></div>
+                            <div class="Container50 Responsive50 ui-fluid"><p:button value="Delete Path" styleClass="RedButton"/></div>
+
+
+                        </div>
+
+                        <p:gmap center="40.7117299, -74.0097789" zoom="14" type="ROADMAP" model="#{markersView.simpleModel2}" style="height:450px; border:solid 1px #ccc;" styleClass="Container40 Responsive100 BordRad3" />
+                    </div>
+                </div>
+                <div class="Container100 Flex">
+                    <div class="Card">
+                        <div class="CardBigTopic">MAINTAIN ROUTING</div>
+                        <div class="SeparatorFull"></div>
+                        <p:tabView styleClass="OvHidden">
+                            <p:tab title="HEADER">
+                                <div class="Container40 Responsive100 NoIndent OvHidden ui-fluid">
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Machine</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="400"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Work</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="ASSY"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Ops.</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="3.000"/></div>
+                                    <div class="Container40 Responsive100 FontLatoBold Fs14 Black Opac80">M. Hrs.</div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="18"/></div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="25"/></div>
+                                    <div class="Container40 Responsive100 FontLatoBold Fs14 Black Opac80">Q. Hrs</div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="22"/></div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="38"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Pc Hr</div>
+                                    <div class="Container60 Responsive50"><p:calendar id="button" showOn="button" /></div>
+                                </div>
+
+                                <div class="Container60 Responsive100 NoIndent">
+                                    <div class="Container100 ui-fluid">
+                                        <p:selectManyCheckbox layout="responsive" columns="2">
+                                            <f:selectItem itemLabel="Trucks" itemValue="0" />
+                                            <f:selectItem itemLabel="Ser. Cars" itemValue="1" />
+                                            <f:selectItem itemLabel="Panelvan" itemValue="2" />
+                                            <f:selectItem itemLabel="Cars" itemValue="3" />
+                                            <f:selectItem itemLabel="Buses" itemValue="4" />
+                                            <f:selectItem itemLabel="Rentals" itemValue="5" />
+                                            <f:selectItem itemLabel="Minibus" itemValue="6" />
+                                            <f:selectItem itemLabel="Luxury" itemValue="7" />
+                                        </p:selectManyCheckbox>
+                                        <div class="EmptyBox20"></div>
+
+                                        <p:inputTextarea rows="7" placeholder="Additional Info" />
+                                    </div>
+
+                                    <div class="Container50 Responsive50 ui-fluid"><p:button value="Save" styleClass="GreenButton"/></div>
+                                    <div class="Container50 Responsive50 ui-fluid"><p:button value="Reset Form" styleClass="RedButton"/></div>
+                                </div>
+                                <div class="EmptyBox10"></div>
+                            </p:tab>
+                            <p:tab title="PARTS PRODUCED">
+                                <div class="Container40 Responsive100 NoIndent OvHidden ui-fluid">
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Machine</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="400"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Work</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="ASSY"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Ops.</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="3.000"/></div>
+                                    <div class="Container40 Responsive100 FontLatoBold Fs14 Black Opac80">M. Hrs.</div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="18"/></div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="25"/></div>
+                                    <div class="Container40 Responsive100 FontLatoBold Fs14 Black Opac80">Q. Hrs</div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="22"/></div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="38"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Pc Hr</div>
+                                    <div class="Container60 Responsive50"><p:calendar id="button2" showOn="button" /></div>
+                                </div>
+
+                                <div class="Container60 Responsive100 NoIndent">
+                                    <div class="Container100 ui-fluid">
+                                        <p:selectManyCheckbox layout="responsive" columns="2">
+                                            <f:selectItem itemLabel="Trucks" itemValue="0" />
+                                            <f:selectItem itemLabel="Ser. Cars" itemValue="1" />
+                                            <f:selectItem itemLabel="Panelvan" itemValue="2" />
+                                            <f:selectItem itemLabel="Cars" itemValue="3" />
+                                            <f:selectItem itemLabel="Buses" itemValue="4" />
+                                            <f:selectItem itemLabel="Rentals" itemValue="5" />
+                                            <f:selectItem itemLabel="Minibus" itemValue="6" />
+                                            <f:selectItem itemLabel="Luxury" itemValue="7" />
+                                        </p:selectManyCheckbox>
+                                        <div class="EmptyBox20"></div>
+
+                                        <p:inputTextarea rows="7" placeholder="Additional Info" />
+                                    </div>
+
+                                    <div class="Container50 Responsive50 ui-fluid"><p:button value="Save" styleClass="GreenButton"/></div>
+                                    <div class="Container50 Responsive50 ui-fluid"><p:button value="Reset Form" styleClass="RedButton"/></div>
+                                </div>
+                                <div class="EmptyBox10"></div>
+                            </p:tab>
+                            <p:tab title="MRP OPTIONS">
+                                <div class="Container40 Responsive100 NoIndent OvHidden ui-fluid">
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Machine</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="400"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Work</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="ASSY"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Ops.</div>
+                                    <div class="Container60 Responsive50"><p:inputText placeholder="3.000"/></div>
+                                    <div class="Container40 Responsive100 FontLatoBold Fs14 Black Opac80">M. Hrs.</div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="18"/></div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="25"/></div>
+                                    <div class="Container40 Responsive100 FontLatoBold Fs14 Black Opac80">Q. Hrs</div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="22"/></div>
+                                    <div class="Container30 Responsive100"><p:inputText placeholder="38"/></div>
+                                    <div class="Container40 Responsive50 FontLatoBold Fs14 Black Opac80">Pc Hr</div>
+                                    <div class="Container60 Responsive50"><p:calendar id="button3" showOn="button" /></div>
+                                </div>
+
+                                <div class="Container60 Responsive100 NoIndent">
+                                    <div class="Container100 ui-fluid">
+                                        <p:selectManyCheckbox layout="responsive" columns="2">
+                                            <f:selectItem itemLabel="Trucks" itemValue="0" />
+                                            <f:selectItem itemLabel="Ser. Cars" itemValue="1" />
+                                            <f:selectItem itemLabel="Panelvan" itemValue="2" />
+                                            <f:selectItem itemLabel="Cars" itemValue="3" />
+                                            <f:selectItem itemLabel="Buses" itemValue="4" />
+                                            <f:selectItem itemLabel="Rentals" itemValue="5" />
+                                            <f:selectItem itemLabel="Minibus" itemValue="6" />
+                                            <f:selectItem itemLabel="Luxury" itemValue="7" />
+                                        </p:selectManyCheckbox>
+                                        <div class="EmptyBox20"></div>
+
+                                        <p:inputTextarea rows="7" placeholder="Additional Info" />
+                                    </div>
+
+                                    <div class="Container50 Responsive50 ui-fluid"><p:button value="Save" styleClass="GreenButton"/></div>
+                                    <div class="Container50 Responsive50 ui-fluid"><p:button value="Reset Form" styleClass="RedButton"/></div>
+                                </div>
+                                <div class="EmptyBox10"></div>
+                            </p:tab>
+                        </p:tabView>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- leaden boxes -->
+        <div class="Container100 NoIndent Flex FlexWrap">
+            <div class="Container50 Responsive100 Flex">
+                <div class="Card LeadenBack">
+                    <div class="CardBigTopic White Opac80">CUSTOMER FLOWS SERVICE DISTANCE HISTOGRAM</div>
+                    <div class="EmptyBox30"></div>
+                    <h:graphicImage name="images/chart.svg" styleClass="Wid100" library="olympos-layout" style=""/>
+                </div>
+            </div>
+            <div class="Container50 NoIndent Responsive100 Flex FlexWrap ui-fluid">
+                <div class="Container33 Flex Responsive50">
+                    <div class="Card LeadenBack">
+                        <div class="CardBigTopic White Opac80">TRANSPORTATION</div>
+                        <div class="EmptyBox20"></div>
+                        <span class="FontLatoLight Fs40 Yellow">19.332</span>
+                        <div class="EmptyBox20"></div>
+                        <p:selectOneMenu id="transportation" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Show Histogram" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="Container33 Responsive50 Flex">
+                    <div class="Card LeadenBack">
+                        <div class="CardBigTopic White Opac80">DEMAND</div>
+                        <div class="EmptyBox20"></div>
+                        <span class="FontLatoLight Fs40 Yellow">22.879</span>
+                        <div class="EmptyBox20"></div>
+                        <p:selectOneMenu id="demnd" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Show Histogram" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="Container33 Responsive50 Flex">
+                    <div class="Card LeadenBack">
+                        <div class="CardBigTopic White Opac80">SHIPPING</div>
+                        <div class="EmptyBox20"></div>
+                        <span class="FontLatoLight Fs40 Yellow">11.734</span>
+                        <div class="EmptyBox20"></div>
+                        <p:selectOneMenu id="ship" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Show Histogram" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="Container33 Responsive50 Flex">
+                    <div class="Card LeadenBack">
+                        <div class="CardBigTopic White Opac80">CUSTOMER LOCATIONS</div>
+                        <div class="EmptyBox20"></div>
+                        <span class="FontLatoLight Fs40 Yellow">4.675</span>
+                        <div class="EmptyBox20"></div>
+                        <p:selectOneMenu id="cust" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Show Histogram" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="Container33 Responsive50 Flex">
+                    <div class="Card LeadenBack">
+                        <div class="CardBigTopic White Opac80">VEHICLES</div>
+                        <div class="EmptyBox20"></div>
+                        <span class="FontLatoLight Fs40 Yellow">4.456</span>
+                        <div class="EmptyBox20"></div>
+                        <p:selectOneMenu id="veh" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Show Histogram" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="Container33 Responsive50 Flex">
+                    <div class="Card LeadenBack">
+                        <div class="CardBigTopic White Opac80">TRANSPORT REPORTS</div>
+                        <div class="EmptyBox20"></div>
+                        <span class="FontLatoLight Fs40 Yellow">789</span>
+                        <div class="EmptyBox20"></div>
+                        <p:selectOneMenu id="trans" style="" appendTo="@this">
+                            <f:selectItem itemLabel="Show Histogram" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

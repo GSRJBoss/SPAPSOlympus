@@ -1,0 +1,802 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="content">
+
+        <div class="Container100 NoIndent Flex FlexWrap">
+
+            <!-- left side -->
+            <div class="Container60 Responsive50 NoIndent Flex FlexWrap">
+                <div class="Container100 Flex">
+                    <div class="Card">
+                        <div class="Container30 Responsive50 NoIndent">
+                            <i class="icon-office-worker2 Fs50 Navy Fleft"></i>
+                            <span class="FontLatoBlack Fs14 Navy Opac80">Welcome, <br/>Mr. Skywalker</span><br/>
+                            <span class="FontLatoLight Fs12 Navy">Your last login - 18.08.2016</span>
+                        </div>
+                        <div class="Container70 Responsive50 NoIndent">
+                            <h:graphicImage name="images/chartmini.svg" styleClass="Wid100" library="olympos-layout" style=""/>
+                        </div>
+                        <div class="EmptyBox5"></div>
+                        <div class="SeparatorFull"></div>
+                        <div class="Container60 Responsive50 NoIndent">
+                            <p:button icon="fa fa-cogs" styleClass="Fs14 White RedButton"/>
+                            <p:button icon="fa fa-folder-open" styleClass="Fs14 White PurpleButton"/>
+                            <p:button icon="fa fa-calculator" styleClass="Fs14 White BlueButton"/>
+                        </div>
+                        <div class="EmptyBox10 ShowOnMobile"></div>
+                        <div class="Container40 Responsive50 NoIndent ui-fluid">
+                            <p:selectOneMenu appendTo="@this" id="company" style="">
+                                <f:selectItem itemLabel="Select Company" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Container100 Flex">
+                    <div class="Card">
+                        <p:tabView styleClass="OvHidden">
+                            <p:tab title="Accounts And Products">
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Checking Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  5678  9012  3456</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 1.237</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Deposit Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  5432  1098  7654</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 12.775</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Credit Card Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  4321  9876  6789</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Card Limit</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 7.800</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Euro Savings Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  6789  1234  4321</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">€ 42.200</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox10"></div>
+
+                            </p:tab>
+                            <p:tab title="Cards">
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Checking Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  5678  9012  3456</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 1.237</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Deposit Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  5432  1098  7654</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 12.775</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Credit Card Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  4321  9876  6789</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Card Limit</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 7.800</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Euro Savings Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  6789  1234  4321</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">€ 42.200</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox10"></div>
+                            </p:tab>
+                            <p:tab title="Money Transfers">
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Checking Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  5678  9012  3456</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 1.237</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Deposit Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  5432  1098  7654</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 12.775</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Credit Card Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  4321  9876  6789</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Card Limit</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 7.800</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Euro Savings Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  6789  1234  4321</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">€ 42.200</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox10"></div>
+                            </p:tab>
+                            <p:tab title="Payments">
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Checking Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  5678  9012  3456</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 1.237</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Deposit Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  5432  1098  7654</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 12.775</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Credit Card Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">1234  4321  9876  6789</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Card Limit</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">$ 7.800</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox5"></div>
+                                <div class="Separator"></div>
+
+                                <div class="Container50 Responsive100">
+                                    <span class="FontLatoBold Fs14 Green DispBlock">Euro Savings Account</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoBold Fs20 Navy DispBlock">9876  6789  1234  4321</span>
+                                    <div class="EmptyBox20"></div>
+                                    <span class="FontLatoLight Fs14 Navy DispBlock">Account IBAN: TR07 1234 5678 9012 345678</span>
+                                </div>
+                                <div class="Container20 Responsive50 TexAlCenter">
+                                    <i class="icon-wallet15 Fs40 Green DispBlock"></i>
+                                    <span class="FontLatoBlack Fs12 Navy DispBlock">Account Balance</span>
+                                    <div class="EmptyBox5"></div>
+                                    <span class="FontLatoLight Fs22 Navy DispBlock">€ 42.200</span>
+                                </div>
+                                <div class="Container30 NoIndent Responsive50 ui-fluid">
+                                    <div class="Container100"><p:button value="Account Activities" styleClass="NavyButton"/></div>
+                                    <div class="Container100"><p:button value="Account Management" styleClass="OrangeButton"/></div>
+                                </div>
+
+                                <div class="EmptyBox10"></div>
+                            </p:tab>
+                        </p:tabView>
+                    </div>
+                </div>
+
+                <div class="Container40 Responsive100 Flex">
+                    <div class="Card ui-fluid">
+                        <div class="CardBigTopic">FAST MONEY TRANSFER</div>
+                        <div class="SeparatorFull"></div>
+                        <div class="EmptyBox5"></div>
+                        <p:selectOneMenu appendTo="@this" id="account" style="">
+                            <f:selectItem itemLabel="Select The Account To Send Money" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                        <div class="EmptyBox10"></div>
+                        <p:inputText id="slider" placeholder="Amount ( Max $ 10.000 )"/>
+                        <p:slider for="slider" maxValue="10000" minValue="1000" step="1000"/>
+                        <div class="EmptyBox5"></div>
+                        <div class="Separator"></div>
+                        <div class="EmptyBox5"></div>
+                        <p:selectOneMenu appendTo="@this" id="transf" style="">
+                            <f:selectItem itemLabel="Transfer Type" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                        <div class="EmptyBox10"></div>
+                        <p:inputTextarea rows="2" placeholder="Explanation (Max 90 Char)" maxlength="90"/>
+                        <div class="EmptyBox5"></div>
+                        <div class="Separator"></div>
+                        <div class="EmptyBox5"></div>
+                        <p:inputSwitch onLabel="on" offLabel="off" id="quest" styleClass="Fleft MarRight10"/>
+                        <label class="FontLatoRegular Fs14 Black Opac80">Add To My Quick Transactions List</label>
+                        <div class="EmptyBox10"></div>
+                        <div class="Container50 Responsive50"><p:button value="Transfer Now" styleClass="NavyButton"/></div>
+                        <div class="Container50 Responsive50"><p:button value="Clear Form" styleClass="RedButton"/></div>
+                    </div>
+                </div>
+
+                <div class="Container60 Responsive100 Flex">
+                    <div class="Card ui-fluid">
+                        <div class="CardBigTopic">FAST BILL PAYMENT</div>
+                        <div class="SeparatorFull"></div>
+
+                        <div class="Container50 Responsive100">
+                            <p:selectOneMenu appendTo="@this" id="billtype" style="">
+                                <f:selectItem itemLabel="Select Bill Type" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="Container50 Responsive100">
+                            <p:selectOneMenu appendTo="@this" id="comp" style="">
+                                <f:selectItem itemLabel="Select Company" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="Container100">
+                            <p:selectOneMenu appendTo="@this" id="selbill" style="">
+                                <f:selectItem itemLabel="Select The Bill You Want To Pay" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+
+                        <div class="EmptyBox5"></div>
+                        <div class="Separator"></div>
+                        <div class="EmptyBox5"></div>
+
+                        <div class="Container100">
+                            <p:selectOneMenu appendTo="@this" id="amount" style="">
+                                <f:selectItem itemLabel="Amount ( $ 320 )" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="Container100">
+                            <p:selectOneMenu appendTo="@this" id="accountt" style="">
+                                <f:selectItem itemLabel="Select The Account You Want To Pay" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+
+                        <div class="EmptyBox5"></div>
+                        <div class="Separator"></div>
+                        <div class="EmptyBox5"></div>
+                        <p:inputSwitch onLabel="on" offLabel="off" id="x" styleClass="Fleft MarRight10"/>
+                        <label class="FontLatoRegular Fs14 Black Opac80">Add To My Quick Payments List</label>
+                        <div class="EmptyBox10"></div>
+                        <div class="Container50 Responsive50"><p:button value="Pay The Bill" styleClass="GreenButton"/></div>
+                        <div class="Container50 Responsive50"><p:button value="Clear Form" styleClass="RedButton"/></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right side -->
+            <div class="Container40 Responsive50 NoIndent Flex FlexWrap">
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-wallet15 Fs50 Green DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs12 White DispBlock">Account Balance</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">$ 1.237</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-smartphone22 Fs50 Green DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs12 White DispBlock">Miles</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">12.250</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-document187 Fs50 Green DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs12 White DispBlock">Invoices</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">$ 870</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-load Fs50 Green DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs12 White DispBlock">Monthly Cash Flow</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">$ 3.200</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-celebration31 Fs40 Yellow DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs18 White DispBlock">GOLD</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">$ 1.212</span>
+                        <span class="FontLatoLight Fs16 Red DispBlock">- %0,17</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-dollar136 Fs40 Green DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs18 White DispBlock">DOLLAR</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">$ 2,92</span>
+                        <span class="FontLatoLight Fs16 Green DispBlock">+ %0,13</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-euro48 Fs40 Green DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs18 White DispBlock">EURO</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">$ 3,29</span>
+                        <span class="FontLatoLight Fs16 Green DispBlock">+ %0,02</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 Flex">
+                    <div class="Card NavyBack TexAlCenter">
+                        <div class="EmptyBox10"></div>
+                        <i class="icon-tea25 Fs40 Blue DispBlock"></i>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoBlack Fs18 White DispBlock">OIL</span>
+                        <div class="EmptyBox5"></div>
+                        <span class="FontLatoLight Fs22 White DispBlock">$ 33,87</span>
+                        <span class="FontLatoLight Fs16 Blue DispBlock">> %0</span>
+                        <div class="EmptyBox10"></div>
+                    </div>
+                </div>
+
+                <div class="Container100 Flex">
+                    <div class="Card ui-fluid">
+                        <div class="CardBigTopic">LOAN CALCULATOR</div>
+                        <div class="SeparatorFull"></div>
+
+                        <div class="Container100">
+                            <p:selectOneMenu appendTo="@this" id="loantype" style="">
+                                <f:selectItem itemLabel="Select Your Loan Type" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="Container50 Responsive100">
+                            <p:inputText id="slider2" placeholder="Installment Min $ 1000"/>
+                            <p:slider for="slider2" maxValue="5000" minValue="500" step="500"/>
+                        </div>
+                        <div class="Container50 Responsive100">
+                            <p:inputText id="slider3" placeholder="Max Loan $ 750.000"/>
+                            <p:slider for="slider3" maxValue="750000" minValue="500000" step="500"/>
+                        </div>
+                        <div class="Container50 Responsive100">
+                            <p:selectOneMenu appendTo="@this" id="exp" style="">
+                                <f:selectItem itemLabel="Expiration ( Max - 240 Month )" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="Container50 Responsive100">
+                            <p:selectOneMenu appendTo="@this" id="rate" style="">
+                                <f:selectItem itemLabel="Bank Rate ( % 1,26 )" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="Container50 Responsive100">
+                            <div class="EmptyBox20"></div>
+                            <p:button value="Calculate" styleClass="PurpleButton"/>
+                            <div class="EmptyBox10"></div>
+                            <p:button value="Clear Form" styleClass="OrangeButton"/>
+                        </div>
+                        <div class="Container50 Responsive100 TexAlCenter">
+                            <div class="EmptyBox30"></div>
+                            <span class="FontLatoBlack Fs14 Navy DispBlock">Refund Amount</span>
+                            <span class="FontLatoRegular Fs40 Red DispBlock">$ 845.000</span>
+                            <span class="FontLatoRegular Fs14 Navy Opac70">Installment - $ 1.837</span>
+                        </div>
+
+                        <div class="EmptyBox5"></div>
+                        <div class="SeparatorFull"></div>
+                        <div class="EmptyBox5"></div>
+                        <div class="Container60 Responsive100">
+                            <i class="icon-days3 Fleft Fs40 Navy MarRight10"></i>
+                            <span class="FontLatoBold Fs14 Navy">Use this loan calculator to calculate estimated monthly payments and rate options.</span>
+                        </div>
+                        <div class="Container40 Responsive100">
+                            <p:button value="Or Contact Us" styleClass="BlueButton"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Container100 Flex">
+                    <div class="Card ui-fluid">
+                        <p:accordionPanel multiple="false">
+                            <p:tab title="Mortgage Loan Application">
+
+                                <div class="Container100">
+                                    <p:selectOneMenu appendTo="@this" id="loantype" style="">
+                                        <f:selectItem itemLabel="Select Your Loan Type" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:inputText id="slider2" placeholder="Installment Min $ 1000"/>
+                                    <p:slider for="slider2" maxValue="5000" minValue="500" step="500"/>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:inputText id="slider3" placeholder="Max Loan $ 750.000"/>
+                                    <p:slider for="slider3" maxValue="750000" minValue="500000" step="500"/>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:selectOneMenu appendTo="@this" id="exp" style="">
+                                        <f:selectItem itemLabel="Expiration ( Max - 240 Month )" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:selectOneMenu appendTo="@this" id="rate" style="">
+                                        <f:selectItem itemLabel="Bank Rate ( % 1,26 )" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container60 Responsive100">
+                                    <div class="EmptyBox30"></div>
+                                    <i class="icon-done2 Fs60 Fleft Red"></i>
+                                    <span class="FontLatoBlack Fs14 Navy DispBlock">Refund Amount</span>
+                                    <span class="FontLatoRegular Fs40 Red DispBlock">$ 845.000</span>
+                                    <span class="FontLatoRegular Fs14 Navy Opac70">Installment - $ 1.837</span>
+                                </div>
+                                <div class="Container40 Responsive100">
+                                    <div class="EmptyBox20"></div>
+                                    <p:button value="Calculate" styleClass="PurpleButton"/>
+                                    <div class="EmptyBox10"></div>
+                                    <p:button value="Clear Form" styleClass="OrangeButton"/>
+                                </div>
+                                <div class="EmptyBox20"></div>
+                            </p:tab>
+                            <p:tab title="Vehicle Loan Application">
+                                <div class="Container100">
+                                    <p:selectOneMenu appendTo="@this" id="loantypee" style="">
+                                        <f:selectItem itemLabel="Select Your Loan Type" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:inputText id="slider22" placeholder="Installment Min $ 1000"/>
+                                    <p:slider for="slider22" maxValue="5000" minValue="500" step="500"/>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:inputText id="slider33" placeholder="Max Loan $ 750.000"/>
+                                    <p:slider for="slider33" maxValue="750000" minValue="500000" step="500"/>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:selectOneMenu appendTo="@this" id="expp" style="">
+                                        <f:selectItem itemLabel="Expiration ( Max - 240 Month )" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:selectOneMenu appendTo="@this" id="ratee" style="">
+                                        <f:selectItem itemLabel="Bank Rate ( % 1,26 )" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container60 Responsive100">
+                                    <div class="EmptyBox30"></div>
+                                    <i class="icon-done2 Fs60 Fleft Red"></i>
+                                    <span class="FontLatoBlack Fs14 Navy DispBlock">Refund Amount</span>
+                                    <span class="FontLatoRegular Fs40 Red DispBlock">$ 845.000</span>
+                                    <span class="FontLatoRegular Fs14 Navy Opac70">Installment - $ 1.837</span>
+                                </div>
+                                <div class="Container40 Responsive100">
+                                    <div class="EmptyBox20"></div>
+                                    <p:button value="Calculate" styleClass="PurpleButton"/>
+                                    <div class="EmptyBox10"></div>
+                                    <p:button value="Clear Form" styleClass="OrangeButton"/>
+                                </div>
+                                <div class="EmptyBox20"></div>
+                            </p:tab>
+                            <p:tab title="Personel Loan Application">
+                                <div class="Container100">
+                                    <p:selectOneMenu appendTo="@this" id="loantypeee" style="">
+                                        <f:selectItem itemLabel="Select Your Loan Type" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:inputText id="slider222" placeholder="Installment Min $ 1000"/>
+                                    <p:slider for="slider222" maxValue="5000" minValue="500" step="500"/>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:inputText id="slider333" placeholder="Max Loan $ 750.000"/>
+                                    <p:slider for="slider333" maxValue="750000" minValue="500000" step="500"/>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:selectOneMenu appendTo="@this" id="exppp" style="">
+                                        <f:selectItem itemLabel="Expiration ( Max - 240 Month )" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container50 Responsive100">
+                                    <p:selectOneMenu appendTo="@this" id="rateee" style="">
+                                        <f:selectItem itemLabel="Bank Rate ( % 1,26 )" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="Container60 Responsive100">
+                                    <div class="EmptyBox30"></div>
+                                    <i class="icon-done2 Fs60 Fleft Red"></i>
+                                    <span class="FontLatoBlack Fs14 Navy DispBlock">Refund Amount</span>
+                                    <span class="FontLatoRegular Fs40 Red DispBlock">$ 845.000</span>
+                                    <span class="FontLatoRegular Fs14 Navy Opac70">Installment - $ 1.837</span>
+                                </div>
+                                <div class="Container40 Responsive100">
+                                    <div class="EmptyBox20"></div>
+                                    <p:button value="Calculate" styleClass="PurpleButton"/>
+                                    <div class="EmptyBox10"></div>
+                                    <p:button value="Clear Form" styleClass="OrangeButton"/>
+                                </div>
+                                <div class="EmptyBox20"></div>
+                            </p:tab>
+                        </p:accordionPanel>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </ui:define>
+
+</ui:composition>

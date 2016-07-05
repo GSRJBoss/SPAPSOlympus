@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<title>PrimeFaces Olympos</title>
+	<ui:insert name="head" />
+</h:head>
+
+<h:body styleClass="AquaBack">
+
+	<div class="Wid70 MarAuto">
+		<div class="Wid70 MarAuto WidAutoOnMobile TexAlCenter">
+			<h:form id="formLogin">
+				<div class="Wid70 MarAuto WidAutoOnMobile">
+					<div class="EmptyBox30"></div>
+					<div class="Container50 Responsive50">
+						<a href="dashboard-supplychain.xhtml"
+							class="DispBlock Fleft FloatNoneOnMobile"><h:graphicImage
+								name="images/logo.svg" library="olympos-layout"
+								style="height:25px;" /></a>
+					</div>
+					<div class="Container50 Responsive50">
+						<p:commandButton type="button" value="Create Free Account"
+							styleClass="OrangeButton Fright FloatNoneOnMobile" />
+					</div>
+					<div class="EmptyBox10 ShowOnMobile"></div>
+
+					<div class="EmptyBox100 ShowOnDesktop"></div>
+					<div class="EmptyBox20 ShowOnMobile"></div>
+
+					<div class="Wid100 FontLatoRegular White Fs18">Welcome Back,
+						Please Login Here !</div>
+					<div class="EmptyBox30"></div>
+					<div class="Card ui-fluid ShadowEffect">
+						<h:form id="form001">
+							<p:growl id="growl" showDetail="true" />
+							<div class="Container100">
+								<p:inputText placeholder="User"
+									value="#{loginController.username}"
+									style="padding:15px !important;">
+									<p:ajax />
+								</p:inputText>
+							</div>
+							<div class="Container100">
+								<p:password placeholder="Password"
+									value="#{loginController.password}"
+									style="padding:15px !important;">
+									<p:ajax />
+								</p:password>
+							</div>
+							<div class="Container100 TexAlLeft">
+								<div class="EmptyBox10"></div>
+								<p:selectManyCheckbox layout="responsive" columns="1">
+									<f:selectItem itemLabel="Remember Me" itemValue="Remember Me" />
+								</p:selectManyCheckbox>
+							</div>
+							<div class="EmptyBox20"></div>
+							<div class="Container100">
+								<p:commandButton type="button" value="Sign In."
+									styleClass="GreenButton">
+									<p:ajax update="formLogin,formGrowl:msgs1"
+										listener="#{loginController.login()}" />
+								</p:commandButton>
+							</div>
+							<p:hotkey bind="return" actionListener="#{loginController.login}"
+								update="growl" />
+							<div class="EmptyBox10"></div>
+							<div class="Separator"></div>
+							<div class="EmptyBox10"></div>
+
+							<span class="DispBlock OvHidden FontLatoBold Fs16 Leaden">Or
+								Sign In</span>
+							<div class="EmptyBox10"></div>
+							<div class="Container50 Responsive100">
+								<p:commandButton type="button" icon="fa fa-facebook Fs16"
+									value="With Facebook" styleClass="NavyButton White" />
+							</div>
+							<div class="Container50 Responsive100">
+								<p:commandButton type="button" icon="fa fa-twitter Fs16"
+									value="With Twitter" styleClass="BlueButton White" />
+							</div>
+							<div class="Container50 Responsive100">
+								<p:commandButton type="button" icon="fa fa-google-plus Fs16"
+									value="With Google Plus" styleClass="RedButton White" />
+							</div>
+							<div class="Container50 Responsive100">
+								<p:commandButton type="button" icon="fa fa-linkedin Fs16"
+									value="With Linkedin" styleClass="AquaButton White" />
+							</div>
+						</h:form>
+					</div>
+
+					<div class="EmptyBox20"></div>
+					<div class="Wid100 FontLatoRegular Fs12 TransparentWhite">
+						<i class="fa fa-copyright DispInlBlock"></i> PrimeFaces Olympos
+						Theme And Layout <br />All rights reserved.
+					</div>
+					<div class="EmptyBox30"></div>
+				</div>
+				</h:form>
+		</div>
+	</div>
+
+	<style>
+.ui-button-text, .ui-button-text-only .ui-button-text {
+	padding: 15px !important;
+	transition: none !important;
+}
+</style>
+
+	<h:outputStylesheet name="css/core-layout.css" library="olympos-layout" />
+	<h:outputStylesheet name="css/font-awesome.css"
+		library="olympos-layout" />
+	<h:outputStylesheet name="css/animate.css" library="olympos-layout" />
+	<h:outputStylesheet name="css/olympos-layout.css"
+		library="olympos-layout" />
+	<h:outputStylesheet name="css/olympos-font.css"
+		library="olympos-layout" />
+
+
+	<!-- START GROWL formGrowl:msgs1 -->
+	<h:form id="formGrowl">
+		<p:growl id="msgs1" showDetail="true" />
+	</h:form>
+</h:body>
+
+</html>

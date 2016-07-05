@@ -1,0 +1,169 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+	<ui:define name="content">
+		<div class="Container100">
+			<!-- top buttons-->
+			<div class="Container100">
+				<h:form id="formBotonesHeader" style="padding-left: 0px;">
+					<div class="Card">
+						<div class="Container50 Responsive100 NoIndent ui-fluid">
+							<div class="Container20 Responsive50 ">
+								<p:commandButton value="Cancelar"
+									update=":formReg,:formBotonesHeader,:formGrowl:msgs1,:formTableEstadoCivil"
+									action="#{estadoCivilController.Init()}"
+									styleClass="OrangeButton" />
+							</div>
+							<div class="Container20 Responsive50 ">
+								<p:commandButton value="Nuevo"
+									disabled="#{!estadoCivilController.crear}"
+									update=":formReg,:formBotonesHeader,:formGrowl:msgs1,:formTableEstadoCivil"
+									action="#{estadoCivilController.cambiarAspecto()}"
+									styleClass="GreenButton" />
+							</div>
+							<div class="Container20 Responsive50 ">
+								<p:commandButton value="Registrar"
+									disabled="#{!estadoCivilController.registrar}"
+									update=":formBotonesHeader,:formReg,:formGrowl:msgs1,:formTableEstadoCivil"
+									action="#{estadoCivilController.registrar()}"
+									styleClass="GreenButton" />
+							</div>
+							<div class="Container20 Responsive50 ">
+								<p:commandButton value="Modificar"
+									disabled="#{!estadoCivilController.modificar}"
+									update=":formBotonesHeader,:formReg,:formGrowl:msgs1,:formTableEstadoCivil"
+									action="#{estadoCivilController.actualizar()}"
+									styleClass="BlueButton" />
+							</div>
+							<div class="Container20 Responsive50 ">
+								<p:commandButton value="Eliminar"
+									disabled="#{!estadoCivilController.modificar}"
+									update=":formBotonesHeader,:formReg,:formGrowl:msgs1,:formTableEstadoCivil"
+									action="#{estadoCivilController.eliminar()}"
+									styleClass="RedButton" />
+							</div>
+
+
+						</div>
+
+
+					</div>
+				</h:form>
+			</div>
+
+			<!-- contenedor registro  -->
+			<div class="Container100">
+				<h:form id="formReg" autocomplete="off">
+					<ui:fragment
+						rendered="#{estadoCivilController.modificar or estadoCivilController.registrar}">
+
+						<div class="Card">
+							<div class="Container40 Responsive100 NoIndent ui-fluid">
+								<p:panel id="basic" header="Registrar Estado Civil"
+									footer="Estado Civil" style="margin-bottom:20px">
+									<h:panelGrid columns="2" cellpadding="1">
+										<div class="Container33 Responsive50 ui-fluid">Descripcion</div>
+										<div class="Container100 Responsive50">
+											<h:inputText id="inputTextDescripcion"
+												value="#{estadoCivilController.estadoCivil.descripcion}"
+												disabled="#{estadoCivilController.estadoCivil.estado =='SU'}"
+												style=" color: #555555; background-image: none;"
+												styleClass="input-sm form-control">
+												<p:ajax event="change" />
+											</h:inputText>
+										</div>
+
+
+										<div class="Container33 Responsive50 ui-fluid">Estado</div>
+										<div class="Container100 Responsive50">
+											<h:selectOneMenu id="estado" style="" appendTo="@this"
+												immediate="true" value="#{estadoCivilController.estado}">
+												<f:selectItems value="#{estadoCivilController.listaEstado}" />
+												<f:ajax event="change" update=":formReg" />
+											</h:selectOneMenu>
+										</div>
+									</h:panelGrid>
+								</p:panel>
+							</div>
+						</div>
+					</ui:fragment>
+				</h:form>
+			</div>
+
+
+			<!-- listado  -->
+			<div class="Container100">
+				<h:form id="formTableEstadoCivil">
+					<ui:fragment rendered="#{estadoCivilController.crear}">
+						<div class="Card">
+							<div class="Container100 Responsive100 NoIndent ui-fluid">
+								<p:dataTable id="dataTableEstadoCivil" var="item"
+									widgetVar="EstadoCivilTable"
+									value="#{estadoCivilController.listaEstadoCivil}"
+									selectionMode="single"
+									style="font-size: 12px !important; line-height: 1.33846154 !important; font-family: sans-serif !important;"
+									emptyMessage="No se encontraron Registros."
+									selection="#{estadoCivilController.estadoCivilSelected}"
+									rowKey="#{item.id}" reflow="true">
+
+									<p:ajax event="rowSelect"
+										listener="#{estadoCivilController.onRowSelect}"
+										update=":formBotonesHeader,:formTableEstadoCivil,:formReg" />
+
+									<p:column width="8%" headerText="Identificador"
+										filterStyle="width: 100%; height:25px;"
+										style="text-align:center;" filterBy="#{item.id}">
+										<h:outputText value="#{item.id}" />
+									</p:column>
+									<p:column headerText="Descripcion"
+										filterStyle="width: 100%; height:25px;"
+										filterBy="#{item.descripcion}">
+										<h:outputText value="#{item.descripcion}" />
+									</p:column>
+									<p:column width="10%" filterStyle="width: 100%; height:25px;"
+										headerText="Estado" style="text-align:center;"
+										filterBy="#{item.estado}">
+										<span class="label label-success"><h:outputText
+												rendered="#{item.estado=='AC'}" value="Activo" /></span>
+										<span class="label label-warning"><h:outputText
+												rendered="#{item.estado=='IN'}" value="Inactivo" /></span>
+										<span class="label label-danger"><h:outputText
+												rendered="#{item.estado=='RM'}" value="Eliminado" /></span>
+									</p:column>
+									<p:column width="10%" filterStyle="width: 100%; height:25px;"
+										style="text-align:center;" headerText="Usuario Registro"
+										filterBy="#{item.usuarioRegistro}">
+										<h:outputText value="#{item.usuarioRegistro}" />
+									</p:column>
+									<p:column width="10%" headerText="Fecha Registro"
+										style="text-align:center;"
+										filterStyle="width: 100%; height:25px;"
+										filterBy="#{item.fechaRegistro}">
+										<h:outputText value="#{item.fechaRegistro}">
+											<f:convertDateTime pattern="dd/MM/yyyy" />
+										</h:outputText>
+									</p:column>
+									<f:facet name="footer">
+										<h:outputText
+											value="#{estadoCivilController.listaEstadoCivil.size()} Registros en Total" />
+									</f:facet>
+								</p:dataTable>
+							</div>
+						</div>
+					</ui:fragment>
+				</h:form>
+			</div>
+
+		</div>
+
+		<!-- START GROWL -->
+		<h:form id="formGrowl">
+			<p:growl id="msgs1" showDetail="true" />
+		</h:form>
+		<!-- END GROWL -->
+	</ui:define>
+
+</ui:composition>

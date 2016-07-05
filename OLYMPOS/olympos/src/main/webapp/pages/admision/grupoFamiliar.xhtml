@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	template="/WEB-INF/templates/template_main.xhtml">
+
+	<ui:define name="head">
+		<title>Grupo Familiar</title>
+		<f:event listener="#{grupoFamiliarController.initConversation}"
+			type="preRenderView"></f:event>
+	</ui:define>
+
+	<ui:define name="content">
+		<!--BEGIN CONTENT-->
+		<div class="content">
+			<section class="content-header">
+				<div class="pull-left" style="padding-top: 8px;">
+					<h:form id="formBotonesHeader" style="padding-left: 10px;">
+						<div class="btn-group-demo">
+							<div class="btn-group">
+								<p:commandLink id="buttonCancelar" value="&#160; Cancelar"
+									styleClass="btn btn-warning ion-minus-circled"
+									rendered="#{grupoFamiliarController.modificar or grupoFamiliarController.registrar}"
+									update=":formReg,:formBotonesHeader"
+									style="height:31px; padding:center"
+									action="#{grupoFamiliarController.initNew()}">
+								</p:commandLink>
+								<p:commandLink id="buttonCrear1"
+									value="&#160; Nuevo Grupo Familiar"
+									styleClass="btn btn-success ion-plus-round"
+									rendered="#{grupoFamiliarController.crear}"
+									update=":formReg,:formBotonesHeader"
+									action="#{grupoFamiliarController.cambiarAspecto()}"
+									style="height:31px;">
+								</p:commandLink>
+								<p:commandLink id="buttonRegistrar" value="&#160; Registrar"
+									styleClass="btn btn-success ion-checkmark"
+									style="height:31px; padding:center"
+									rendered="#{grupoFamiliarController.registrar}"
+									update=":formBotonesHeader,:formReg,formGrowl:msgs1,formTableGrupoFamiliar"
+									action="#{grupoFamiliarController.registrar()}">
+								</p:commandLink>
+								<p:commandLink id="buttonModificar" value="&#160; Modificar"
+									styleClass="btn btn-primary ion-edit"
+									rendered="#{grupoFamiliarController.modificar}"
+									style="height:31px; padding:center"
+									update=":formBotonesHeader,:formReg,formGrowl:msgs1,:formTableGrupoFamiliar,:formReg:estado,:formReg:sexo"
+									action="#{grupoFamiliarController.actualizar()}">
+								</p:commandLink>
+								<p:commandLink id="buttonEliminar" value="&#160; Eliminar"
+									styleClass="btn btn-danger ion-close"
+									style="height:31px; padding:center"
+									rendered="#{grupoFamiliarController.modificar}"
+									update=":formBotonesHeader,:formReg,formGrowl:msgs1,:formTableGrupoFamiliar"
+									action="#{grupoFamiliarController.eliminar()}">
+								</p:commandLink>
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</section>
+			<section class="main-content">
+				<section class="main-content">
+					<div class="row">
+						<h:form id="formReg" autocomplete="off">
+							<ui:fragment
+								rendered="#{grupoFamiliarController.modificar or grupoFamiliarController.registrar}">
+								<div class="col-md-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Registro de Grupo Familiar</h3>
+										</div>
+										<div class="panel-body">
+											<!-- start here register -->
+											<div class="box-content form-horizontal">
+												<div class="form-group ">
+													<div class="col-md-4 control-label">Codigo</div>
+													<div class="col-md-8">
+														<h:inputText id="inputTextCodigo"
+															value="#{grupoFamiliarController.grupoFamiliar.codigo}"
+															disabled="#{grupoFamiliarController.grupoFamiliar.estado =='SU'}"
+															style=" color: #555555; background-image: none;"
+															styleClass="input-sm form-control">
+															<p:ajax event="change" />
+														</h:inputText>
+													</div>
+												</div>
+												<div class="form-group ">
+													<div class="col-md-4 control-label">Nombre</div>
+													<div class="col-md-8">
+														<h:inputText id="inputTextNombre"
+															value="#{grupoFamiliarController.grupoFamiliar.nombre}"
+															disabled="#{grupoFamiliarController.grupoFamiliar.estado =='SU'}"
+															style=" color: #555555; background-image: none;"
+															styleClass="input-sm form-control">
+															<p:ajax event="change" />
+														</h:inputText>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-4 control-label">Sexo</label>
+													<div class="col-md-8">
+														<h:selectOneRadio value="" id="sexo"
+															styleClass="input-sm form-control"
+															style=" color: #555555; height:25px; font-size:11px;"
+															immediate="true" value="#{grupoFamiliarController.sexo}">
+															<f:selectItems
+																value="#{grupoFamiliarController.listaSexo}" />
+															<f:ajax event="change" update=":formReg" />
+														</h:selectOneRadio>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-4 control-label">Estado</label>
+													<div class="col-md-8">
+														<h:selectOneMenu id="estado"
+															styleClass="input-sm form-control"
+															style=" color: #555555; height:25px; font-size:11px;"
+															immediate="true"
+															value="#{grupoFamiliarController.estado}">
+															<f:selectItems
+																value="#{grupoFamiliarController.listaEstado}" />
+															<f:ajax event="change" update=":formReg" />
+														</h:selectOneMenu>
+													</div>
+												</div>
+												<!-- aqui botones -->
+											</div>
+											<!-- end here register -->
+										</div>
+									</div>
+								</div>
+							</ui:fragment>
+						</h:form>
+					</div>
+					<div>
+						<h:form id="formTableGrupoFamiliar">
+							<ui:fragment rendered="true">
+								<div class="col-md-12">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Lista de Documentos de Identidad</h3>
+										</div>
+										<!-- start here datatable -->
+										<p:dataTable id="dataTableGrupoFamiliar" var="item"
+											widgetVar="GrupoFamiliarTable"
+											value="#{grupoFamiliarController.listaGrupoFamiliar}"
+											selectionMode="single"
+											style="font-size: 12px !important; line-height: 1.33846154 !important; font-family: sans-serif !important;"
+											emptyMessage="No se encontraron Registros."
+											selection="#{grupoFamiliarController.grupoFamiliarSelected}"
+											rowKey="#{item.id}" reflow="true">
+
+											<p:ajax event="rowSelect"
+												listener="#{grupoFamiliarController.onRowSelect}"
+												update=":formReg,:formBotonesHeader,:formTableGrupoFamiliar,:formReg:estado,:formReg:sexo" />
+
+											<p:column width="8%" headerText="Identificador"
+												filterStyle="width: 100%; height:25px;"
+												style="text-align:center;" filterBy="#{item.id}">
+												<h:outputText value="#{item.id}" />
+											</p:column>
+											<p:column headerText="Codigo"
+												filterStyle="width: 100%; height:25px;"
+												filterBy="#{item.codigo}">
+												<h:outputText value="#{item.codigo}" />
+											</p:column>
+											<p:column headerText="Nombre"
+												filterStyle="width: 100%; height:25px;"
+												filterBy="#{item.nombre}">
+												<h:outputText value="#{item.nombre}" />
+											</p:column>
+											<p:column width="10%" filterStyle="width: 100%; height:25px;"
+												headerText="Sexo" style="text-align:center;"
+												filterBy="#{item.sexo}">
+												<span class="label label-success"><h:outputText
+														rendered="#{item.sexo}" value="#{item.sexo}" /></span>
+											</p:column>
+											<p:column width="10%" filterStyle="width: 100%; height:25px;"
+												headerText="Estado" style="text-align:center;"
+												filterBy="#{item.estado}">
+												<span class="label label-success"><h:outputText
+														rendered="#{item.estado=='AC'}" value="Activo" /></span>
+												<span class="label label-warning"><h:outputText
+														rendered="#{item.estado=='IN'}" value="Inactivo" /></span>
+												<span class="label label-danger"><h:outputText
+														rendered="#{item.estado=='RM'}" value="Eliminado" /></span>
+											</p:column>
+											<p:column width="10%" filterStyle="width: 100%; height:25px;"
+												style="text-align:center;" headerText="Usuario Registro"
+												filterBy="#{item.usuarioRegistro}">
+												<h:outputText value="#{item.usuarioRegistro}" />
+											</p:column>
+											<p:column width="10%" headerText="Fecha Registro"
+												style="text-align:center;"
+												filterStyle="width: 100%; height:25px;"
+												filterBy="#{item.fechaRegistro}">
+												<h:outputText value="#{item.fechaRegistro}">
+													<f:convertDateTime pattern="dd/MM/yyyy" />
+												</h:outputText>
+											</p:column>
+											<f:facet name="footer">
+												<h:outputText
+													value="#{grupoFamiliarController.listaGrupoFamiliar.size()} Registros en Total" />
+											</f:facet>
+										</p:dataTable>
+
+										<!-- end here datatable -->
+										<div class="panel-body"></div>
+									</div>
+								</div>
+							</ui:fragment>
+						</h:form>
+					</div>
+				</section>
+			</section>
+		</div>
+		<!-- START GROWL -->
+		<h:form id="formGrowl">
+			<p:growl id="msgs1" showDetail="true" />
+		</h:form>
+		<!-- END GROWL -->
+
+		<!-- START DIALOG -->
+		<p:dialog header="DIALOG TEST" widgetVar="dlg1" modal="true"
+			height="100%">
+		</p:dialog>
+		<!-- END DIALOG -->
+	</ui:define>
+
+</ui:composition>
